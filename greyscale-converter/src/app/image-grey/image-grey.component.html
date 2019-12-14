@@ -1,0 +1,9 @@
+<mat-card class="image-upload-panel">
+    <h1>File Upload</h1>
+    <div class="image-preview">
+        <canvas #canvas ></canvas>
+    </div>
+    <input type="file" (change)="onFileSelected($event)">
+    <br>
+    <button mat-button (click)="onDownload()">Add</button>
+</mat-card>
