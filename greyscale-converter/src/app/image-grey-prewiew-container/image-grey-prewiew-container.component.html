@@ -1,0 +1,16 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ imageTitle |  titlecase }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="greyscaled-image">
+      <img [src]="imageLink">
+    </div>
+    <button mat-button (click)="downloadImage(imageId)">Download</button>
+    <button mat-button (click)="removeImage(imageId)">Remove</button>
+
+
+  </mat-expansion-panel>
+</mat-accordion>

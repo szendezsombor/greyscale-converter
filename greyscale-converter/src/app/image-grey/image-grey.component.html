@@ -1,9 +1,12 @@
 <mat-card class="image-upload-panel">
     <h1>File Upload</h1>
-    <div class="image-preview">
-        <canvas #canvas ></canvas>
-    </div>
-    <input type="file" (change)="onFileSelected($event)">
+    <input type="file" multiple="multiple" accept="image/*" (change)="onFileSelected($event)">
     <br>
-    <button mat-button (click)="onDownload()">Add</button>
+    <!-- <button mat-button (click)="addImages()">Download</button> -->
 </mat-card>
+<div class="image-greyscale-previews">
+    <app-image-grey-prewiew-container [id]="image.id" [title]="image.title" [link]="image.link" *ngFor="let image of uploadedImagesLinks"></app-image-grey-prewiew-container>
+</div>
+
+
+
