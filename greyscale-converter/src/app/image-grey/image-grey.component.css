@@ -1,16 +1,15 @@
 .image-upload-panel {
     width: 50%;
     margin: auto;
+    margin-top: 2%;
     padding: 2%;
 }
 
-.image-preview{
+.image-greyscale-previews {
     width: 100%;
-    height: 70%;
     margin: auto;
 }
 
-.image-greyscale-previews {
-    width: 54%;
-    margin: auto;
+input[type="file"] {
+    visibility: hidden;
 }

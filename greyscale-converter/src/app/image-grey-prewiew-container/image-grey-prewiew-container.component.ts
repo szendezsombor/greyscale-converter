@@ -1,3 +1,4 @@
+import { greyscalePanelFade } from './../animations';
 import { ImageService } from './../image.service';
 import { Component, OnInit, Input } from '@angular/core';
 

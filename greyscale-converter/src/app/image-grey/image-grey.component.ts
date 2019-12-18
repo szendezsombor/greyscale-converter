@@ -1,18 +1,23 @@
+import { fade, greyscalePanelFade } from './../animations';
 import { ImageModel } from './image.model';
 import { ImageService } from './../image.service';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { saveAs } from 'file-saver';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-image-grey',
   templateUrl: './image-grey.component.html',
-  styleUrls: ['./image-grey.component.css']
+  styleUrls: ['./image-grey.component.css'],
+  animations: [
+    fade,
+    greyscalePanelFade
+  ]
 })
 export class ImageGreyComponent implements OnInit {
   public uploadedImagesLinks: ImageModel[] = [];
   constructor(private imageService: ImageService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   onFileSelected(event) {
     console.log(event.target.files);
