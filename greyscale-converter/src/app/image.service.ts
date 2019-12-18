@@ -1,7 +1,6 @@
 import { ImageModel } from './image-grey/image.model';
 import { saveAs } from 'file-saver';
-import { AppComponent } from './app.component';
-import { Injectable, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -69,11 +68,9 @@ export class ImageService {
   }
 
   downloadImage(id: number) {
-    if (id <= this.uploadedImagesLinks.length) {
-      const img = this.getUploadedImagesLinks().find(image => image.id === id);
-      if (img) {
-        saveAs(this.dataURItoBlob(img.link), img.title);
-      }
+    const img = this.getUploadedImagesLinks().find(image => image.id === id);
+    if (img) {
+      saveAs(this.dataURItoBlob(img.link), img.title);
     }
   }
 
@@ -97,11 +94,11 @@ export class ImageService {
     return this.uploadedImagesLinks;
   }
 
-  getIdCounter(){
+  getIdCounter() {
     return this.idCounter;
   }
 
-  increaseIdCounter(increment: number){
+  increaseIdCounter(increment: number) {
     return this.idCounter += increment;
   }
 }
